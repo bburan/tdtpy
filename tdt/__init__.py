@@ -5,6 +5,8 @@ import logging
 # ReadTheDocs.org can generate our autodocumentation.
 
 
+__version__ = '0.7.1'
+
 class NullHandler(logging.Handler):
     def emit(self, record):
         pass
