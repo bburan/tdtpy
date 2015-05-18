@@ -1,4 +1,5 @@
 from distutils.core import setup
+import tdt
 from os import path
 try:
     import setuptools  # noqa, setuptools namespace
@@ -11,7 +12,7 @@ CLASSIFIERS = [
     'Programming Language :: Python',
     'Topic :: Scientific/Engineering',
     'Topic :: System :: Hardware',
-    'License :: OSI Approved :: GNU General Public License (GPL)'
+    'License :: OSI Approved'
 ]
 
 here = path.dirname(path.abspath(__file__))
@@ -28,12 +29,12 @@ Documentation: http://tdtpy.readthedocs.org
 
 setup(
     name='TDTPy',
-    version='0.7',
+    version=tdt.__version__,  # This prevents use on linux (which is desired)
     author='Brad Buran',
     author_email='bburan@alum.mit.edu',
     packages=['tdt', 'tdt.actxobjects', 'tdt.device'],
-    url='http://bradburan.com/programs/tdtpy',
-    license='GPLv3',
+    url='http://tdtpy.readthedocs.org',
+    license='BSD (3-clause)',
     description='Module for communicating with TDT\'s System 3 hardware',
     long_description=long_description,
     requires=['win32com', 'six'],
